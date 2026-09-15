@@ -16,7 +16,7 @@ export default function EventModal() {
           {/* Golden Ribbon Badge */}
           <div className="launch-ribbon-badge">
             <Award size={16} className="ribbon-icon" />
-            <span>OFFICIALLY LAUNCHED ON ENGINEERS' DAY 2024</span>
+            <span>OFFICIALLY LAUNCHED ON ENGINEERS' DAY 2026</span>
           </div>
 
           {/* Hero Branding */}

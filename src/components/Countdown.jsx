@@ -81,7 +81,7 @@ export default function Countdown({ onComplete }) {
       <div className="ceremony-header-block">
         <div className="event-pill gold-pill">
           <Award className="pill-icon" size={17} />
-          <span>OFFICIALLY LAUNCHED ON ENGINEERS' DAY 2024</span>
+          <span>OFFICIALLY LAUNCHED ON ENGINEERS' DAY 2026</span>
           <span className="live-indicator">
             <span className="live-dot"></span> {hasStarted ? 'LIVE COUNTDOWN' : 'READY'}
           </span>
