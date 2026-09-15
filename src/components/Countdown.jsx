@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Award, MousePointerClick } from 'lucide-react';
+import { sound } from '../utils/audioFx';
 
 const STAGE_MESSAGES = {
   10: "Inauguration Protocol Initiated at Kashi Institute of Technology",
@@ -22,8 +23,16 @@ export default function Countdown({ onComplete }) {
 
   // Listen for clicks anywhere on the screen to begin countdown
   useEffect(() => {
-    const handleScreenClick = () => {
+    const handleScreenClick = (e) => {
+      // Prevent audio toggle or explicit exclusions from triggering if clicked
+      if (e.target && e.target.closest && e.target.closest('.floating-audio-btn')) {
+        return;
+      }
+
       if (!hasStarted) {
+        sound.init();
+        sound.playClick();
+        sound.playTick(10);
         setHasStarted(true);
       }
     };
@@ -45,8 +54,10 @@ export default function Countdown({ onComplete }) {
       timer = setTimeout(() => {
         const nextTime = timeLeft - 1;
         setTimeLeft(nextTime);
+        sound.playTick(nextTime);
 
         if (nextTime === 0) {
+          sound.playFanfare();
           setTimeout(() => {
             onComplete();
           }, 900);
