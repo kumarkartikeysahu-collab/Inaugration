@@ -44,6 +44,32 @@ export default function EventMotiveCard() {
           );
         })}
       </div>
+
+      {/* Tech Domain Tag Pills */}
+      <div className="card-tags-pills-row">
+        <span className="mini-pill">AI & ML</span>
+        <span className="mini-pill">Cloud Ops</span>
+        <span className="mini-pill">CyberSec</span>
+        <span className="mini-pill highlight">IoT Systems</span>
+      </div>
+
+      {/* 3 Metric Pills at Bottom */}
+      <div className="guest-event-metrics card-bottom-metrics">
+        <div className="metric-pill-box">
+          <span className="metric-primary">12 Events</span>
+          <span className="metric-secondary">ANNUAL SERIES</span>
+        </div>
+
+        <div className="metric-pill-box">
+          <span className="metric-primary">KIT Stage</span>
+          <span className="metric-secondary">MAIN VENUE</span>
+        </div>
+
+        <div className="metric-pill-box">
+          <span className="metric-primary">Future Tech</span>
+          <span className="metric-secondary">CORE FOCUS</span>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,19 +1,22 @@
 import React from 'react';
-import { GraduationCap, Award, Users, Trophy } from 'lucide-react';
+import { GraduationCap, Award, Users, Trophy, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export default function StudentExcellenceCard() {
   const points = [
     {
       icon: Users,
-      text: "Direct mentorship with industry leaders from TCS & top tech giants."
+      title: "Direct Mentorship",
+      text: "Guidance from senior leaders and architects at TCS & top tech enterprises."
     },
     {
       icon: Trophy,
-      text: "Monthly project showcases, peer competitions, & skill certifications."
+      title: "Showcases & Contests",
+      text: "Monthly hackathons, peer coding contests, and industry skill certifications."
     },
     {
       icon: Award,
-      text: "Building the premiere tech and innovation ecosystem of Eastern UP."
+      title: "Innovation Hub",
+      text: "Building Eastern UP's premier engineering and technical excellence ecosystem."
     }
   ];
 
@@ -35,10 +38,39 @@ export default function StudentExcellenceCard() {
               <div className="point-icon-box">
                 <Icon size={16} />
               </div>
-              <p className="point-text">{point.text}</p>
+              <div className="point-text-wrap">
+                <span className="point-title">{point.title}: </span>
+                <span className="point-desc">{point.text}</span>
+              </div>
             </div>
           );
         })}
+      </div>
+
+      {/* Student Focus Tag Pills */}
+      <div className="card-tags-pills-row">
+        <span className="mini-pill">Hackathons</span>
+        <span className="mini-pill">Skill Certs</span>
+        <span className="mini-pill">Peer Coding</span>
+        <span className="mini-pill highlight">Placement Edge</span>
+      </div>
+
+      {/* 3 Metric Pills at Bottom (Matching other cards) */}
+      <div className="guest-event-metrics card-bottom-metrics">
+        <div className="metric-pill-box">
+          <span className="metric-primary">100%</span>
+          <span className="metric-secondary">PRACTICAL</span>
+        </div>
+
+        <div className="metric-pill-box">
+          <span className="metric-primary">TCS & Tech</span>
+          <span className="metric-secondary">MENTORSHIP</span>
+        </div>
+
+        <div className="metric-pill-box">
+          <span className="metric-primary">Monthly</span>
+          <span className="metric-secondary">AWARDS</span>
+        </div>
       </div>
     </div>
   );
